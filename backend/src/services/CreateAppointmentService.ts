@@ -25,7 +25,7 @@ class CreateAppointmentService {
         );
 
         if (FindAppointmentInSameDate) { //trativa de erro na rota
-
+            //service não tem  acesso direto requisição e resposta, será recebido na rota
             throw new AppError('this appointment is already booked');
         }
 

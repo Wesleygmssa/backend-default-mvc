@@ -3,7 +3,7 @@
 </h3>
 
 <p align="center">
-   <img src="https://github.com/Wesleygmssa/gobaber-web/raw/master/01.PNG >
+   <img src="https://github.com/Wesleygmssa/gobaber-web/raw/master/01.PNG" >
 </p>
 
 
@@ -17,9 +17,9 @@ yarn
 ### :computer: Scripts de inicialização:
   * Inicie a aplicação em modo desenvolvimento!
  ```bash
- yarn start
+ yarn dev:server
  ```
- * Abra [http://localhost:3000](http://localhost:3000) para vizualizar em seu navegador
+ * Abra [http://localhost:3000](http://localhost:3333) para vizualizar em seu navegador
 
 
 ## 🤔 Tem alguma feature e quer contribuir?

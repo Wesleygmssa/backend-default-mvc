@@ -4,12 +4,10 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateCol
 import User from './Users';
 
 /* Relacionamentos
-
 *um para um (OneToOne)
 *um para Muitos (OneToMany)
 *Muitos para Muitos (ManyToMany)
 *
-
 */
 
 @Entity('appointments') //ENVIA A CLASS COMO PARAMNETRO PARA ENTIDADE.

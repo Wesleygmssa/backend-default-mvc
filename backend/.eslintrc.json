@@ -45,16 +45,6 @@
                 "format": [
                     "PascalCase"
                 ]
-            },
-            {
-                "selector": "interface",
-                "format": [
-                    "PascalCase"
-                ],
-                "custom": {
-                    "regex": "^I[A-Z]",
-                    "match": false
-                }
             }
         ],
         "import/extensions": [

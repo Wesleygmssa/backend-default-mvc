@@ -8,7 +8,6 @@ import AppError from '../errors/AppError';
 
 interface Request {
     email: string;
-    // eslint-disable-next-line prettier/prettier
     password: string;
 }
 

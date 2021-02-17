@@ -1,6 +1,5 @@
 
 //RESPONSAVEL PELA CRIAÇÃO DO AGENDAMENTO // REGRA DE NEGOCIO
-
 import Appointment from '../models/Appointment';
 import { startOfHour, } from 'date-fns';
 import AppointmentsRepository from '../repositories/AppointmentsRepository'; //PARA USAR O REPOSITORIO EXISTENTE
@@ -15,31 +14,27 @@ interface Request {
 class CreateAppointmentService {
 
     public async execute({ provider_id, date }: Request): Promise<Appointment> {
-
         const appointmentsRepository = getCustomRepository(AppointmentsRepository); //PARA USAR O REPOSITORIO EXISTENTE
-
         const appointmentDate = startOfHour(date);
-
         const FindAppointmentInSameDate = await appointmentsRepository.findByDate(
             appointmentDate
         );
 
-        if (FindAppointmentInSameDate) { //trativa de erro na rota
+        if (FindAppointmentInSameDate) {
             //service não tem  acesso direto requisição e resposta, será recebido na rota
             throw new AppError('this appointment is already booked');
         }
 
-        //criando apointment
+
         const appointment = appointmentsRepository.create({
             provider_id,
             date: appointmentDate
         });
 
-        //salvando appoiments
         await appointmentsRepository.save(appointment); //SALVANDO NO BANCO DE DADOS
 
         //retornando o agendamento
-        return appointment
+        return appointment;
     }
 }
 export default CreateAppointmentService;

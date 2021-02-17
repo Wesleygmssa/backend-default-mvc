@@ -8,9 +8,7 @@ interface Request {
 }
 
 class CreateUserSerive {
-
     public async execute({ name, email, password }: Request): Promise<User> {
-
         const usersRepository = getRepository(User);
         const checkUserExist = await usersRepository.findOne({
             where: { email: email }
@@ -30,11 +28,9 @@ class CreateUserSerive {
         });
 
         // delete user.password;
-
         await usersRepository.save(user)
         return user;
     }
-
 }
 
 export default CreateUserSerive;

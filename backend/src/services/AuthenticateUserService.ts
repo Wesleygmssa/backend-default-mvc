@@ -12,7 +12,6 @@ interface Request {
 }
 
 class AuthencateUserService {
-
     public async execute({ email, password }: Request): Promise<{ token: string, user: User }> {
         const usersRepository = getRepository(User); // todos metodosll
 

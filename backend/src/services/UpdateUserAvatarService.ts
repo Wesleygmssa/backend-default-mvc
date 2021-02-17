@@ -1,8 +1,8 @@
 import { getRepository } from 'typeorm';
-import User from '../models/Users';
 import path from 'path';
-import uploadConfig from '../config/upload';
 import fs from 'fs';
+import User from '../models/Users';
+import uploadConfig from '../config/upload';
 import AppError from '../errors/AppError';
 
 /*
@@ -13,6 +13,7 @@ import AppError from '../errors/AppError';
 
 */
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 interface Request {
   user_id: string;
   avatarFileName: string;
@@ -30,7 +31,7 @@ class UpdateUserAvatarService {
     if (user.avatar) {
       // deletar avatar anterior
       const userAvatarFilePath = path.join(uploadConfig.directory, user.avatar);
-      const userAvatarFileExistis = await fs.promises.stat(userAvatarFilePath); //verificar se arq exist
+      const userAvatarFileExistis = await fs.promises.stat(userAvatarFilePath); // verificar se arq exist
       if (userAvatarFileExistis) {
         await fs.promises.unlink(userAvatarFilePath);
       }

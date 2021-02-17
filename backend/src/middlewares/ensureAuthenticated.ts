@@ -3,13 +3,18 @@ import { verify } from 'jsonwebtoken';
 import authConfig from '../config/auth';
 import AppError from '../errors/AppError';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 interface tokenPayload {
   iat: number;
   exp: number;
   sub: string;
 }
 // fica entre as rotas
-export default function ensureAuthentiicated(request: Request, response: Response, next: NextFunction): void {
+export default function ensureAuthentiicated(
+  request: Request,
+  response: Response,
+  next: NextFunction,
+): void {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
@@ -25,7 +30,8 @@ export default function ensureAuthentiicated(request: Request, response: Respons
     // console.log(sub)
 
     // @types/express.d.ts
-    request.user = { // ADICIONANDO O ID DO USUÁRIO NAS REQUISIÇÕES NAS ROTAS Q SÃO AUTENTICADAS
+    request.user = {
+      // ADICIONANDO O ID DO USUÁRIO NAS REQUISIÇÕES NAS ROTAS Q SÃO AUTENTICADAS
       id: sub,
     };
 

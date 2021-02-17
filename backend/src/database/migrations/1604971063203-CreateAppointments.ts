@@ -1,8 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+/* eslint-disable prettier/prettier */
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-//criado das tabelas e campos
-export default class CreateAppointments1604971063203 implements MigrationInterface {
-
+// criado das tabelas e campos
+export default class CreateAppointments1604971063203
+    implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
@@ -13,7 +14,7 @@ export default class CreateAppointments1604971063203 implements MigrationInterfa
                         type: 'uuid',
                         isPrimary: true,
                         generationStrategy: 'uuid',
-                        default: 'uuid_generate_v4()'
+                        default: 'uuid_generate_v4()',
                     },
                     {
                         name: 'provider',
@@ -32,14 +33,13 @@ export default class CreateAppointments1604971063203 implements MigrationInterfa
                         name: 'updated_at',
                         type: 'timestamp',
                         default: 'now()',
-                    }
-                ]
-            })
+                    },
+                ],
+            }),
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('appointments')
+        await queryRunner.dropTable('appointments');
     }
-
 }

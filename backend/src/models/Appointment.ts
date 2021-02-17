@@ -1,16 +1,22 @@
 // MODELS ESTÁ RELACIONADO COM UMA TABELA NO BANCO DE DADOS
 
 import {
-  Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn,
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import User from './Users';
 
 /* Relacionamentos
-*um para um (OneToOne)
-*um para Muitos (OneToMany)
-*Muitos para Muitos (ManyToMany)
-*
-*/
+ *um para um (OneToOne)
+ *um para Muitos (OneToMany)
+ *Muitos para Muitos (ManyToMany)
+ *
+ */
 
 @Entity('appointments') // ENVIA A CLASS COMO PARAMNETRO PARA ENTIDADE.
 class Appointment {
@@ -28,10 +34,10 @@ class Appointment {
   date: Date;
 
   @CreateDateColumn()
-  created_at: Date
+  created_at: Date;
 
   @UpdateDateColumn()
-  updated_at: Date
+  updated_at: Date;
 }
 
 export default Appointment;

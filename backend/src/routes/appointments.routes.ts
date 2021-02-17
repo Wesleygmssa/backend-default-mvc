@@ -1,18 +1,18 @@
-import { Router } from "express";
-import { parseISO } from "date-fns";
+import { Router } from 'express';
+import { parseISO } from 'date-fns';
 
-import { getCustomRepository } from "typeorm";
-import ensureAuthenticated from "../middlewares/ensureAuthenticated";
+import { getCustomRepository } from 'typeorm';
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
-import AppointmentsRepository from "../repositories/AppointmentsRepository";
-import CreateAppointmentServices from "../services/CreateAppointmentService";
+import AppointmentsRepository from '../repositories/AppointmentsRepository';
+import CreateAppointmentServices from '../services/CreateAppointmentService';
 
 const appointmentsRouter = Router();
 
 appointmentsRouter.use(ensureAuthenticated); // aplicanto middlewares em todas as rotas
 
 // lista todos o agendamentos
-appointmentsRouter.get("/", async (request, response) => {
+appointmentsRouter.get('/', async (request, response) => {
   const appointmentRepository = getCustomRepository(AppointmentsRepository);
   const appointments = await appointmentRepository.find();
 
@@ -20,7 +20,7 @@ appointmentsRouter.get("/", async (request, response) => {
 });
 
 // salvando
-appointmentsRouter.post("/", async (request, response) => {
+appointmentsRouter.post('/', async (request, response) => {
   const { provider_id, date } = request.body;
   const parseDate = parseISO(date);
   const createAppointment = new CreateAppointmentServices(); // classs

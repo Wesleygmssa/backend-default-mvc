@@ -10,7 +10,7 @@ import AppError from './errors/AppError';
 import './database'; // importando conexão database
 
 const app = express();
-app.use(cors());
+app.use(cors()); //kiberação da api para interface
 app.use(express.json()); // Utl.JSON
 app.use('/file', express.static(uploadConfig.directory)); // exibir fotos localhost:
 app.use(routes);// ordem linear

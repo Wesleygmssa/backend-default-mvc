@@ -1,5 +1,5 @@
 <h3 align="center">
- Gobaber-Default-MVC-NodeJS
+ Gobaber-Default-SOLID-NodeJS
 </h3>
 
 <p align="center">

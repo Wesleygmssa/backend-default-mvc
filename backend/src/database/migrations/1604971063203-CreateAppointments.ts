@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 // criado das tabelas e campos

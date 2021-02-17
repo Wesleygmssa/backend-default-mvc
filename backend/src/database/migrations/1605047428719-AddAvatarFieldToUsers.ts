@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { MigrationInterface, QueryRunner, TableColumn } from 'typeorm';
 
 export default class AddAvatarFieldToUsers1605047428719

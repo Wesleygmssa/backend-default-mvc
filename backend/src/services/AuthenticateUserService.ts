@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';

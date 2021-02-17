@@ -15,6 +15,11 @@ yarn
  ```
 
 ### :computer: Scripts de inicialização:
+* Inicie a aplicação em modo desenvolvimento!
+ 
+ - Necessario criar um ambiente em docker e criar um banco de dados.
+ - E configurar migrations e seeds
+ 
   * Inicie a aplicação em modo desenvolvimento!
  ```bash
  yarn dev:server

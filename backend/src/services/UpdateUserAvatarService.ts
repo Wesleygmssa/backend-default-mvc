@@ -7,7 +7,7 @@ import AppError from '../errors/AppError';
 
 /*
 
-* Recebimento das informações [x]
+* Recebimento das info [x]
 * Trativa de error/exessões [x]
 * Acesso ao repositorio do TypeORM [x]
 
@@ -37,7 +37,7 @@ class UpdateUserAvatarService {
       }
     }
 
-    user.avatar = avatarFileName; // atualize a nova foto
+    user.avatar = avatarFileName; // update a new photo
     await usersRepository.save(user);
     return user;
   }
